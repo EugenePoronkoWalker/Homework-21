@@ -11,15 +11,21 @@ driver.set_window_position(2000, 600)
 driver.maximize_window()
 url = 'https://dumskaya.net/'
 driver.get(url)
-home = base.HomePage(driver)
-reg = base.RegistrationPage(driver)
-top = base.TopPage(driver)
-# home.open_articles_page()
+#home = base.HomePage(driver)
+# reg = base.RegistrationPage(driver)
+# top = base.TopPage(driver)
+# # home.open_articles_page()
+#
+# # Розібратись чого не працює
+# # home.open_home_page()
+# home.user_menu()
+# home.registration_user()
+# # reg.registration(user_data.email,user_data.nick,user_data.password)
+# home.open_top_page()
+# print(top.first_line())
 
-# Розібратись чого не працює
-# home.open_home_page()
-home.user_menu()
-home.registration_user()
-# reg.registration(user_data.email,user_data.nick,user_data.password)
-home.open_top_page()
-print(top.first_line())
+materials = base.Materials(driver)
+materials.open_materials_menu()
+print(materials.first_article())
+
+

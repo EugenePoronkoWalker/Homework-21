@@ -78,11 +78,29 @@ class HomePage(BasePage):
         super().__init__(driver)
         pass
 
+
 class TopPage(BasePage):
     def __init__(self, driver):
         super().__init__(driver)
         pass
 
     def first_line(self):
-        first_news = WebDriverWait(self.driver, 30).until(EC.presence_of_element_located((By.XPATH, '//div[@class="content"]/table/tbody/tr/td[@valign="top" and not(@class="newsdatetd2")]/a')))
+        first_news = WebDriverWait(self.driver, 30).until(EC.presence_of_element_located(
+            (By.XPATH, '//div[@class="content"]/table/tbody/tr/td[@valign="top" and not(@class="newsdatetd2")]/a')))
         return first_news.text
+
+
+class Materials(BasePage):
+    def __init__(self, driver):
+        super().__init__(driver)
+        pass
+
+    def open_materials_menu(self):
+        materials_button = WebDriverWait(self.driver, 30).until(
+            EC.presence_of_element_located((By.XPATH, x.materials_button)))
+        materials_button.click()
+
+    def first_article(self):
+        first_article = WebDriverWait(self.driver, 30).until(
+            EC.presence_of_element_located((By.XPATH, x.first_acticle)))
+        return first_article.text
