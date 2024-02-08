@@ -102,5 +102,5 @@ class Materials(BasePage):
 
     def first_article(self):
         first_article = WebDriverWait(self.driver, 30).until(
-            EC.presence_of_element_located((By.XPATH, x.first_acticle)))
+            EC.presence_of_element_located((By.XPATH, x.first_article)))
         return first_article.text
