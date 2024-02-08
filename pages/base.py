@@ -39,6 +39,11 @@ class BasePage:
             EC.presence_of_element_located((By.XPATH, '//div[@class="menutable"]/div/a[@href="/articles/"]')))
         articles_button.click()
 
+    def open_materials_menu(self):
+        materials_button = WebDriverWait(self.driver, 30).until(
+            EC.presence_of_element_located((By.XPATH, x.materials_button)))
+        materials_button.click()
+
     def open_top_page(self):
         top_button = WebDriverWait(self.driver, 30).until(
             EC.element_to_be_clickable((By.XPATH, '//div[@class="menutable"]/div/a[@href="/topweek/"]')))
@@ -94,11 +99,6 @@ class Materials(BasePage):
     def __init__(self, driver):
         super().__init__(driver)
         pass
-
-    def open_materials_menu(self):
-        materials_button = WebDriverWait(self.driver, 30).until(
-            EC.presence_of_element_located((By.XPATH, x.materials_button)))
-        materials_button.click()
 
     def first_article(self):
         first_article = WebDriverWait(self.driver, 30).until(

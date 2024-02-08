@@ -23,9 +23,9 @@ driver.get(url)
 # # reg.registration(user_data.email,user_data.nick,user_data.password)
 # home.open_top_page()
 # print(top.first_line())
-
+home = base.HomePage(driver)
 materials = base.Materials(driver)
-materials.open_materials_menu()
+home.open_materials_menu()
 print(materials.first_article())
 
 
